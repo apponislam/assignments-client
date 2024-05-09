@@ -1,9 +1,69 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Context } from "../Provider/Provider";
+import { signOut, updateProfile } from "firebase/auth";
+import auth from "../../Firebase/Firebase.config";
+import Swal from "sweetalert2";
 
 const Signup = () => {
     const [viewpass, setViewpass] = useState(false);
+    const { signUpUser, setLoading } = useContext(Context);
+    const nvaigate = useNavigate();
+
+    const signUpButton = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const image = e.target.image.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(name, image, email, password);
+
+        if (password.length < 6) {
+            // toast.error("Password must be at least 6 characters");
+            return;
+        }
+        if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+            // toast.error("Password must contain at least one uppercase and one lowercase letter");
+            return;
+        }
+
+        signUpUser(email, password)
+            .then((result) => {
+                console.log(result.user);
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: image,
+                })
+                    .then(() => {
+                        console.log("profile updated successfully");
+                        Swal.fire({
+                            icon: "success",
+                            title: "Registered Successfully",
+                        });
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+                signOut(auth)
+                    .then(() => {
+                        console.log("logged out after registration");
+                        nvaigate("/login");
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            })
+            .catch((error) => {
+                console.log(error.message);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Registered Failed",
+                });
+                setLoading(false);
+            });
+    };
 
     return (
         <div className="container mx-auto">
@@ -13,7 +73,7 @@ const Signup = () => {
                         <h1 className="text-center font-semibold text-3xl">Registration</h1>
                     </div>
                     <div className="p-5">
-                        <form>
+                        <form onSubmit={signUpButton}>
                             <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none mb-4" type="text" placeholder="Name..." name="Name" required />
                             <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none mb-4" type="text" placeholder="Image Url..." name="image" required />
                             <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none mb-4" type="email" placeholder="Email..." name="email" required />

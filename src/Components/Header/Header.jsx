@@ -42,7 +42,7 @@ const Header = () => {
     const navlinks = (
         <>
             <li>
-                <NavLink to="/assignments">Assignment</NavLink>
+                <NavLink to="/assignments">Assignments</NavLink>
             </li>
             <li>
                 <NavLink to="/login">Login</NavLink>
@@ -56,7 +56,7 @@ const Header = () => {
     const navlinks2 = (
         <>
             <li>
-                <NavLink to="/assignments">Assignment</NavLink>
+                <NavLink to="/assignments">Assignments</NavLink>
             </li>
             <li>
                 <NavLink to="/createAssignment">Create Assignment</NavLink>

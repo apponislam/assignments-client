@@ -9,7 +9,7 @@ const Provider = ({ children }) => {
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
 
-    const signupUser = (email, password) => {
+    const signUpUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
@@ -46,7 +46,7 @@ const Provider = ({ children }) => {
         return () => unSubscribe();
     }, []);
 
-    const info = { signupUser, signInUser, googleSignInUser, githubSignInUser, logOut, loading, setLoading, user };
+    const info = { signUpUser, signInUser, googleSignInUser, githubSignInUser, logOut, loading, setLoading, user };
 
     return <Context.Provider value={info}>{children}</Context.Provider>;
 };
