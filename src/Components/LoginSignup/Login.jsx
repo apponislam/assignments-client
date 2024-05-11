@@ -100,11 +100,11 @@ const Login = () => {
                             <input className="btn w-full mb-4" type="submit" value="Log In" />
                         </form>
                         <div>
-                            <div className="flex justify-center items-center gap-4 p-3 shadow-md border rounded-lg mb-4" onClick={googleSignInButton}>
+                            <div className="flex justify-center items-center gap-4 p-3 shadow-md border rounded-lg mb-4 cursor-pointer" onClick={googleSignInButton}>
                                 <FcGoogle />
                                 <p>Login with Google</p>
                             </div>
-                            <div className="flex justify-center items-center gap-4 p-3 shadow-md border rounded-lg mb-4" onClick={githubSignInButton}>
+                            <div className="flex justify-center items-center gap-4 p-3 shadow-md border rounded-lg mb-4 cursor-pointer" onClick={githubSignInButton}>
                                 <FaGithub />
                                 <p>Login with Github</p>
                             </div>
