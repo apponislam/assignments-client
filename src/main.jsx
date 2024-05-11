@@ -13,6 +13,7 @@ import Assignments from "./Components/Assignments/Assignments.jsx";
 import CreateAssignment from "./Components/CreateAssignment/CreateAssignment.jsx";
 import PendingAssignment from "./Components/PendingAssignment/PendingAssignment.jsx";
 import NotSigined from "./Components/PrivateRoutes/NotSigined.jsx";
+import UpdateAssignment from "./Components/Assignments/UpdateAssignment.jsx";
 // import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
 
 const router = createBrowserRouter([
@@ -59,6 +60,15 @@ const router = createBrowserRouter([
                 element: (
                     <NotSigined>
                         <PendingAssignment></PendingAssignment>
+                    </NotSigined>
+                ),
+            },
+            {
+                path: "/update/:id",
+                loader: ({ params }) => fetch(`https://painting-drawing-server-three.vercel.app/allart/${params.id}`),
+                element: (
+                    <NotSigined>
+                        <UpdateAssignment></UpdateAssignment>
                     </NotSigined>
                 ),
             },

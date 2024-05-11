@@ -1,12 +1,7 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { Context } from "../Provider/Provider";
-import axios from "axios";
-import Swal from "sweetalert2";
 
-const CreateAssignment = () => {
-    const { user } = useContext(Context);
+const UpdateAssignment = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [deficulty, setDificulty] = useState("easy");
 
@@ -14,26 +9,8 @@ const CreateAssignment = () => {
         setDificulty(e.target.value);
     };
 
-    const createAssignment = (e) => {
+    const updateAssignment = (e) => {
         e.preventDefault();
-        const name = user.displayName;
-        const email = user.email;
-        const form = e.target;
-        const title = form.title.value;
-        const marks = form.marks.value;
-        const image = form.image.value;
-        const description = form.description.value;
-        const assignment = { name, email, title, marks, image, description, startDate, deficulty };
-        console.log(assignment);
-        axios.post("http://localhost:5000/assignments", assignment).then((data) => {
-            console.log(data.data);
-            if (data.data.insertedId) {
-                Swal.fire({
-                    icon: "success",
-                    title: "Assignment Added Successfully",
-                });
-            }
-        });
     };
 
     return (
@@ -44,7 +21,7 @@ const CreateAssignment = () => {
                         <h1 className="text-center font-semibold text-3xl">Create your assignment</h1>
                     </div>
                     <div className="p-4">
-                        <form onSubmit={createAssignment}>
+                        <form onSubmit={updateAssignment}>
                             <div className="gap-4 grid md:grid-cols-2 grid-cols-1">
                                 <div>
                                     <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none" type="text" placeholder="Title..." name="title" required />
@@ -78,4 +55,4 @@ const CreateAssignment = () => {
     );
 };
 
-export default CreateAssignment;
+export default UpdateAssignment;

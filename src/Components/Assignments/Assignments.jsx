@@ -61,7 +61,7 @@ const Assignments = () => {
                 <div className="container md:mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-20 mx-3 xl:mx-0">
                         {assignment2.map((assignment) => (
-                            <Assignment key={assignment._id} assignment={assignment}></Assignment>
+                            <Assignment key={assignment._id} assignment={assignment} assignment1={assignment1} setAssignment1={setAssignment1} setAssignment2={setAssignment2}></Assignment>
                         ))}
                     </div>
                 </div>
