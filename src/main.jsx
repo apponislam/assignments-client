@@ -65,7 +65,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/update/:id",
-                loader: ({ params }) => fetch(`https://painting-drawing-server-three.vercel.app/allart/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
                 element: (
                     <NotSigined>
                         <UpdateAssignment></UpdateAssignment>

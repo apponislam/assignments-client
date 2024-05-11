@@ -67,7 +67,9 @@ const Assignment = ({ assignment, assignment1, setAssignment1, setAssignment2 })
                 </div>
                 <div>
                     <div className="grid grid-cols-2 gap-4 mb-4">
-                        <button className="btn">Update</button>
+                        <Link to={`/update/${_id}`}>
+                            <button className="btn w-full">Update</button>
+                        </Link>
                         <button className="btn" onClick={() => deleteAssignment(_id)}>
                             Delete
                         </button>
