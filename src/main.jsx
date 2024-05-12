@@ -14,13 +14,14 @@ import CreateAssignment from "./Components/CreateAssignment/CreateAssignment.jsx
 import PendingAssignment from "./Components/PendingAssignment/PendingAssignment.jsx";
 import NotSigined from "./Components/PrivateRoutes/NotSigined.jsx";
 import UpdateAssignment from "./Components/Assignments/UpdateAssignment.jsx";
-// import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
+import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
+import Details from "./Components/Assignments/Details.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <App></App>,
-        // errorElement: <ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -46,6 +47,15 @@ const router = createBrowserRouter([
                 path: "/assignments",
                 element: <Assignments></Assignments>,
                 loader: () => fetch("http://localhost:5000/assignments"),
+            },
+            {
+                path: "/info/:id",
+                loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
+                element: (
+                    <NotSigined>
+                        <Details></Details>
+                    </NotSigined>
+                ),
             },
             {
                 path: "/createAssignment",
