@@ -16,7 +16,7 @@ const Assignments = () => {
 
     const [selectedOption, setSelectedOption] = useState("Difficulty Level");
     const handleChange = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setSelectedOption(e.target.value);
     };
 
@@ -25,16 +25,12 @@ const Assignments = () => {
         const filteredMediumData = assignment1.filter((item) => item.deficulty === "medium");
         const filteredHardData = assignment1.filter((item) => item.deficulty === "hard");
         if (selectedOption == "easy") {
-            console.log("first selected option");
             setAssignment2([...filteredEasyData]);
         } else if (selectedOption == "medium") {
-            console.log("seceond selected option");
             setAssignment2([...filteredMediumData]);
         } else if (selectedOption == "hard") {
-            console.log("seceond selected option");
             setAssignment2([...filteredHardData]);
         } else {
-            console.log("Default selected option");
             setAssignment2(assignment1);
         }
     }, [selectedOption, assignment1]);

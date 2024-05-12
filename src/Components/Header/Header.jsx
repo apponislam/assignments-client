@@ -64,6 +64,9 @@ const Header = () => {
             <li>
                 <NavLink to="/pendingAssignment">Pending Assignment</NavLink>
             </li>
+            <li>
+                <NavLink to="/mySubmit">My Submitted</NavLink>
+            </li>
         </>
     );
 

@@ -13,7 +13,7 @@ const Signup = () => {
 
     const signUpButton = (e) => {
         e.preventDefault();
-        const name = e.target.name.value;
+        const name = e.target.Name.value;
         const image = e.target.image.value;
         const email = e.target.email.value;
         const password = e.target.password.value;

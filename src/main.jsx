@@ -8,7 +8,7 @@ import Login from "./Components/LoginSignup/Login.jsx";
 import Signup from "./Components/LoginSignup/Signup.jsx";
 import Provider from "./Components/Provider/Provider.jsx";
 import { HelmetProvider } from "react-helmet-async";
-import Sigined from "./Components/PrivateRoutes/Sigined.jsx";
+// import Sigined from "./Components/PrivateRoutes/Sigined.jsx";
 import Assignments from "./Components/Assignments/Assignments.jsx";
 import CreateAssignment from "./Components/CreateAssignment/CreateAssignment.jsx";
 import PendingAssignment from "./Components/PendingAssignment/PendingAssignment.jsx";
@@ -30,19 +30,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/login",
-                element: (
-                    <Sigined>
-                        <Login></Login>
-                    </Sigined>
-                ),
+                element: <Login></Login>,
             },
             {
                 path: "/register",
-                element: (
-                    <Sigined>
-                        <Signup></Signup>
-                    </Sigined>
-                ),
+                element: <Signup></Signup>,
             },
             {
                 path: "/assignments",

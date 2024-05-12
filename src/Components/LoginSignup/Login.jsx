@@ -2,16 +2,18 @@ import { useContext, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
-import { Link, Navigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../Provider/Provider";
 import Swal from "sweetalert2";
 
 const Login = () => {
     const [viewpass, setViewpass] = useState(false);
+    const navigate = useNavigate();
 
     const { signInUser, googleSignInUser, setLoading, githubSignInUser } = useContext(Context);
-    const location = useLocation();
+    // const location = useLocation();
     // console.log("Location In Login Page", location);
+    // <Navigate to={location?.state ? location.state : "/"}></Navigate>;
 
     const logInButton = (e) => {
         e.preventDefault();
@@ -21,7 +23,8 @@ const Login = () => {
         signInUser(email, password)
             .then((result) => {
                 console.log(result.user);
-                <Navigate to={location?.state ? location.state : "/"}></Navigate>;
+                // <Navigate to="/"></Navigate>;
+                navigate("/");
                 Swal.fire({
                     icon: "success",
                     title: "Login Successfully",
@@ -42,7 +45,8 @@ const Login = () => {
         googleSignInUser()
             .then((result) => {
                 console.log(result.user);
-                <Navigate to={location?.state ? location.state : "/"}></Navigate>;
+                // <Navigate to={location?.state ? location.state : "/"}></Navigate>;
+                navigate("/");
                 Swal.fire({
                     icon: "success",
                     title: "Login Successfully",
@@ -63,7 +67,8 @@ const Login = () => {
         githubSignInUser()
             .then((result) => {
                 console.log(result.user);
-                <Navigate to={location?.state ? location.state : "/"}></Navigate>;
+                // <Navigate to={location?.state ? location.state : "/"}></Navigate>;
+                navigate("/");
                 Swal.fire({
                     icon: "success",
                     title: "Login Successfully",

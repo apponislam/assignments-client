@@ -8,9 +8,9 @@ const Assignment = ({ assignment, assignment1, setAssignment1, setAssignment2 })
     const { user } = useContext(Context);
 
     const Useremail = user?.email;
-    console.log(Useremail);
+    // console.log(Useremail);
 
-    console.log(assignment);
+    // console.log(assignment);
     const { _id, image, title, marks, deficulty, email } = assignment;
 
     const deleteAssignment = (id) => {
@@ -85,7 +85,7 @@ const Assignment = ({ assignment, assignment1, setAssignment1, setAssignment2 })
 
 Assignment.propTypes = {
     assignment: PropTypes.object,
-    assignment1: PropTypes.object,
+    assignment1: PropTypes.array,
     setAssignment1: PropTypes.func,
     setAssignment2: PropTypes.func,
 };

@@ -1,6 +1,13 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { Context } from "../Provider/Provider";
 
 const SubmitAssignment = () => {
+    const { user } = useContext(Context);
+    const examineeName = user.displayName;
+    const examineeEmail = user.email;
+    console.log(examineeName, examineeEmail);
+
     const assignment = useLoaderData();
     console.log(assignment);
 
