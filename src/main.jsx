@@ -16,6 +16,7 @@ import NotSigined from "./Components/PrivateRoutes/NotSigined.jsx";
 import UpdateAssignment from "./Components/Assignments/UpdateAssignment.jsx";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
 import Details from "./Components/Assignments/Details.jsx";
+import SubmitAssignment from "./Components/Assignments/SubmitAssignment.jsx";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,15 @@ const router = createBrowserRouter([
                 element: (
                     <NotSigined>
                         <Details></Details>
+                    </NotSigined>
+                ),
+            },
+            {
+                path: "/Submit/:id",
+                loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
+                element: (
+                    <NotSigined>
+                        <SubmitAssignment></SubmitAssignment>
                     </NotSigined>
                 ),
             },
