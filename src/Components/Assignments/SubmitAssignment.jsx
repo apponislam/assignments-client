@@ -49,7 +49,7 @@ const SubmitAssignment = () => {
                             <form onSubmit={assignmentSubmitBtn}>
                                 <div className="gap-4 grid grid-cols-1">
                                     <div>
-                                        <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none" type="text" placeholder="PDF/Doc Link..." name="document" required />
+                                        <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none" type="text" placeholder="PDF Link..." name="document" required />
                                     </div>
                                     <div>
                                         <textarea className="w-full bg-transparent border-b p-3 focus-visible:outline-none h-32" type="text" placeholder="Quick Note..." name="note" required />
