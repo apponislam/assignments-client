@@ -2,16 +2,18 @@ import { useContext, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../Provider/Provider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
     const [viewpass, setViewpass] = useState(false);
     const navigate = useNavigate();
 
     const { signInUser, googleSignInUser, setLoading, githubSignInUser } = useContext(Context);
-    // const location = useLocation();
+    const location = useLocation();
+    console.log(location);
     // console.log("Location In Login Page", location);
     // <Navigate to={location?.state ? location.state : "/"}></Navigate>;
 
@@ -24,7 +26,13 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user);
                 // <Navigate to="/"></Navigate>;
-                navigate("/");
+
+                const user = { email };
+                axios.post("http://localhost:5000/jwt", user, { withCredentials: true }).then((res) => {
+                    console.log(res.data);
+                });
+
+                navigate(location?.state ? location?.state : "/");
                 Swal.fire({
                     icon: "success",
                     title: "Login Successfully",
@@ -45,8 +53,15 @@ const Login = () => {
         googleSignInUser()
             .then((result) => {
                 console.log(result.user);
+
+                const email = result.user.email;
+                const user = { email };
+                axios.post("http://localhost:5000/jwt", user, { withCredentials: true }).then((res) => {
+                    console.log(res.data);
+                });
+
                 // <Navigate to={location?.state ? location.state : "/"}></Navigate>;
-                navigate("/");
+                navigate(location?.state ? location?.state : "/");
                 Swal.fire({
                     icon: "success",
                     title: "Login Successfully",
@@ -67,8 +82,15 @@ const Login = () => {
         githubSignInUser()
             .then((result) => {
                 console.log(result.user);
+
+                const email = result.user.email;
+                const user = { email };
+                axios.post("http://localhost:5000/jwt", user, { withCredentials: true }).then((res) => {
+                    console.log(res.data);
+                });
+
                 // <Navigate to={location?.state ? location.state : "/"}></Navigate>;
-                navigate("/");
+                navigate(location?.state ? location?.state : "/");
                 Swal.fire({
                     icon: "success",
                     title: "Login Successfully",

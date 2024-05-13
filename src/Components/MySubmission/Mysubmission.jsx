@@ -1,17 +1,21 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../Provider/Provider";
+import useAxios from "./useAxios";
 
 const Mysubmission = () => {
     const { user } = useContext(Context);
     const userEmail = user.email;
+    const axiosSecure = useAxios();
 
     const [myAssignments, setMyAssignments] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/submitted?email=${userEmail}`)
-            .then((res) => res.json())
-            .then((data) => setMyAssignments(data));
-    }, [userEmail]);
+        // fetch(`http://localhost:5000/submitted?email=${userEmail}`, { credentials: "include" })
+        //     .then((res) => res.json())
+        //     .then((data) => setMyAssignments(data));
+
+        axiosSecure.get(`/submitted?email=${userEmail}`).then((res) => setMyAssignments(res.data));
+    }, [userEmail, axiosSecure]);
 
     return (
         <div className="container mx-auto">
