@@ -23,7 +23,8 @@ const SubmitAssignment = () => {
         const ownerName = name;
         const ownerEmail = email;
         const status = false;
-        const submittedAssignment = { document, note, image, title, marks, deficulty, ownerName, ownerEmail, examineeName, examineeEmail, status };
+        const feedback = "No Feedback";
+        const submittedAssignment = { document, note, image, title, marks, deficulty, ownerName, ownerEmail, examineeName, examineeEmail, status, feedback };
         axios.post("http://localhost:5000/submitted", submittedAssignment).then((data) => {
             console.log(data.data);
             if (data.data.insertedId) {

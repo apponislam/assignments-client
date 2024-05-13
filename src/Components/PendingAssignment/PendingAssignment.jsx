@@ -5,7 +5,7 @@ const PendingAssignment = () => {
     const [pendingAssignments, setPendingAssignments] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/submitted")
+        fetch("http://localhost:5000/submitted/status/false")
             .then((res) => res.json())
             .then((data) => setPendingAssignments(data));
     }, []);

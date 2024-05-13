@@ -16,7 +16,7 @@ const Mysubmission = () => {
     return (
         <div className="container mx-auto">
             <div className="my-10 md:my-20">
-                <h1 className="text-2xl md:text-4xl text-center my-12 uppercase font-extrabold">Pending Assignments</h1>
+                <h1 className="text-2xl md:text-4xl text-center my-12 uppercase font-extrabold">My Submission</h1>
 
                 <div className="overflow-x-auto">
                     <table className="table">
@@ -35,7 +35,7 @@ const Mysubmission = () => {
                                 <tr key={myAssignment._id}>
                                     <th>{myAssignment.title}</th>
                                     <td>
-                                        {myAssignment.gotten ? myAssignment.gotten : "(...)"}/{myAssignment.marks}
+                                        {myAssignment.yougot ? myAssignment.yougot : "(...)"}/{myAssignment.marks}
                                     </td>
                                     <td>{myAssignment.examineeName}</td>
                                     <td>{myAssignment.feedback}</td>
