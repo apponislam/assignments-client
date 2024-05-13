@@ -17,6 +17,7 @@ import UpdateAssignment from "./Components/Assignments/UpdateAssignment.jsx";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.jsx";
 import Details from "./Components/Assignments/Details.jsx";
 import SubmitAssignment from "./Components/Assignments/SubmitAssignment.jsx";
+import Mysubmission from "./Components/MySubmission/Mysubmission.jsx";
 
 const router = createBrowserRouter([
     {
@@ -72,6 +73,14 @@ const router = createBrowserRouter([
                 element: (
                     <NotSigined>
                         <PendingAssignment></PendingAssignment>
+                    </NotSigined>
+                ),
+            },
+            {
+                path: "/mySubmit",
+                element: (
+                    <NotSigined>
+                        <Mysubmission></Mysubmission>
                     </NotSigined>
                 ),
             },
