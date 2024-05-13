@@ -24,15 +24,16 @@ const Header = () => {
         return (
             <div className="container mx-auto">
                 <div className="flex justify-between items-center p-2">
-                    <div className="skeleton h-14 w-36"></div>
+                    <div className="skeleton h-12 w-28"></div>
                     <div className="items-center gap-2 hidden lg:flex">
-                        <div className="skeleton h-9 w-20"></div>
-                        <div className="skeleton h-9 w-20"></div>
-                        <div className="skeleton h-9 w-20"></div>
+                        <div className="skeleton h-9 w-32"></div>
+                        <div className="skeleton h-9 w-32"></div>
+                        <div className="skeleton h-9 w-32"></div>
+                        <div className="skeleton h-9 w-32"></div>
                     </div>
                     <div className="flex items-center gap-3">
-                        <div className="skeleton h-14 w-24"></div>
-                        <div className="skeleton h-14 w-24"></div>
+                        <div className="skeleton h-12 w-20"></div>
+                        <div className="skeleton h-12 w-20"></div>
                     </div>
                 </div>
             </div>

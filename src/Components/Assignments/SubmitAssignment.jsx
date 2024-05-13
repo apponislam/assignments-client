@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { Context } from "../Provider/Provider";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -13,6 +13,7 @@ const SubmitAssignment = () => {
     const assignment = useLoaderData();
     console.log(assignment);
     const { image, title, marks, deficulty, name, email } = assignment;
+    const navigate = useNavigate();
 
     const assignmentSubmitBtn = (e) => {
         e.preventDefault();
@@ -21,7 +22,8 @@ const SubmitAssignment = () => {
         const note = form.note.value;
         const ownerName = name;
         const ownerEmail = email;
-        const submittedAssignment = { document, note, image, title, marks, deficulty, ownerName, ownerEmail, examineeName, examineeEmail };
+        const status = false;
+        const submittedAssignment = { document, note, image, title, marks, deficulty, ownerName, ownerEmail, examineeName, examineeEmail, status };
         axios.post("http://localhost:5000/submitted", submittedAssignment).then((data) => {
             console.log(data.data);
             if (data.data.insertedId) {
@@ -29,6 +31,7 @@ const SubmitAssignment = () => {
                     icon: "success",
                     title: "Submitted successfully",
                 });
+                navigate("/mySubmit");
             }
         });
     };
