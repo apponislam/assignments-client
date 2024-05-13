@@ -1,10 +1,11 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const GiveMark = () => {
     const markAssignment = useLoaderData();
     const { _id, note, document, marks } = markAssignment;
     console.log(markAssignment);
+    const navigate = useNavigate();
 
     const isPdf = document.slice(-3) === "pdf";
 
@@ -47,14 +48,15 @@ const GiveMark = () => {
                         icon: "success",
                         title: "Assignment Reviewed Successfully",
                     });
+                    navigate("/mySubmit");
                 }
             });
     };
 
     return (
         <div className="container mx-auto">
-            <div className="my-10 md:my-20">
-                <div className="grid grid-cols-2 gap-4">
+            <div className="my-10 md:my-20 mx-3 md:mx-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <p className="mb-2">
                             Total Marks: <span className="font-bold">{marks}</span>
@@ -65,7 +67,7 @@ const GiveMark = () => {
 
                         <div className="flex flex-col w-full border shadow-lg rounded-2xl">
                             <div className="p-5 border-b">
-                                <h1 className="text-center font-semibold text-3xl">Submit your assignment</h1>
+                                <h1 className="text-center font-semibold text-2xl md:text-3xl">Submit your assignment</h1>
                             </div>
                             <div className="p-4">
                                 <form onSubmit={markSubmitBtn}>

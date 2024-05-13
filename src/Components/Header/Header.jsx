@@ -91,7 +91,7 @@ const Header = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-2">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[50] p-2 shadow bg-base-100 rounded-box w-52 gap-2">
                             {user ? navlinks2 : navlinks}
                         </ul>
                     </div>
@@ -124,7 +124,7 @@ const Header = () => {
                             <Link to="/login">
                                 <button className="btn">Log In</button>
                             </Link>
-                            <Link to="/signup">
+                            <Link to="/register">
                                 <button className="btn">Sign Up</button>
                             </Link>
                         </>

@@ -21,8 +21,8 @@ const Home = () => {
                 <h1 className="text-2xl md:text-4xl text-center my-12 font-extrabold">FAQs</h1>
 
                 <div className="flex items-center justify-center flex-col mb-10">
-                    <div className="w-1/2 gap-4 flex flex-col">
-                        <div className="collapse collapse-arrow border bg-transparent rounded-none border-green-600">
+                    <div className="px-3 md:px-0 w-full md:w-1/2 gap-4 flex flex-col">
+                        <div className="w-auto collapse collapse-arrow border bg-transparent rounded-none border-green-600">
                             <input type="radio" name="my-accordion-2" defaultChecked />
                             <div className="collapse-title text-xl font-medium">How do I submit my website assignment?</div>
                             <div className="collapse-content">

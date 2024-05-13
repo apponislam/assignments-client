@@ -10,7 +10,7 @@ const Details = () => {
     return (
         <div className="container mx-auto">
             <div className="my-10 md:my-20 flex items-center justify-center">
-                <div className="border w-2/3 border-blue-600 rounded-2xl p-5">
+                <div className="border w-full md:w-2/3 border-blue-600 rounded-2xl p-4 md:p-5 mx-3 md:mx-0">
                     <div className="relative">
                         <img className="w-full h-96 object-cover mb-4 rounded-2xl" src={image} alt="" />
                         <p className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-3xl font-bold">{deficulty}</p>
