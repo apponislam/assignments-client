@@ -3,7 +3,8 @@ import Swal from "sweetalert2";
 
 const GiveMark = () => {
     const markAssignment = useLoaderData();
-    const { _id, note, document } = markAssignment;
+    const { _id, note, document, marks } = markAssignment;
+    console.log(markAssignment);
 
     const isPdf = document.slice(-3) === "pdf";
 
@@ -19,6 +20,14 @@ const GiveMark = () => {
         e.preventDefault();
         const form = e.target;
         const yougot = form.newMark.value;
+        if (yougot > marks) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Mark Can't bigger than assignment marks",
+            });
+            return;
+        }
         const feedback = form.feedback.value;
         const status = true;
         const reviewed = { yougot, feedback, status };
@@ -47,8 +56,11 @@ const GiveMark = () => {
             <div className="my-10 md:my-20">
                 <div className="grid grid-cols-2 gap-4">
                     <div>
+                        <p className="mb-2">
+                            Total Marks: <span className="font-bold">{marks}</span>
+                        </p>
                         <p className="mb-10">
-                            Note: <span className="font-bold">{note}</span>
+                            Note by user: <span className="font-bold">{note}</span>
                         </p>
 
                         <div className="flex flex-col w-full border shadow-lg rounded-2xl">
@@ -59,7 +71,7 @@ const GiveMark = () => {
                                 <form onSubmit={markSubmitBtn}>
                                     <div className="gap-4 grid grid-cols-1">
                                         <div>
-                                            <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none" type="number" placeholder="Mark..." name="newMark" required />
+                                            <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none" type="number" placeholder="Give mark..." name="newMark" required />
                                         </div>
                                         <div>
                                             <textarea className="w-full bg-transparent border-b p-3 focus-visible:outline-none h-32" type="text" placeholder="Feedback..." name="feedback" required />
