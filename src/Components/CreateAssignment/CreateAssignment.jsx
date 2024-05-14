@@ -4,11 +4,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Context } from "../Provider/Provider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CreateAssignment = () => {
     const { user } = useContext(Context);
     const [startDate, setStartDate] = useState(new Date());
     const [deficulty, setDificulty] = useState("easy");
+    const navigate = useNavigate();
 
     const dificultyBtn = (e) => {
         setDificulty(e.target.value);
@@ -32,6 +34,7 @@ const CreateAssignment = () => {
                     icon: "success",
                     title: "Assignment Added Successfully",
                 });
+                navigate("/assignments");
             }
         });
     };
