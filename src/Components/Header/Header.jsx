@@ -122,10 +122,10 @@ const Header = () => {
                     ) : (
                         <>
                             <Link to="/login">
-                                <button className="btn">Log In</button>
+                                <button className="btn bg-transparent border-green-600 text-green-600 hover:bg-green-600 hover:text-white">Log In</button>
                             </Link>
                             <Link to="/register">
-                                <button className="btn">Sign Up</button>
+                                <button className="btn bg-green-600 border-green-600 text-white hover:bg-transparent hover:border-green-600 hover:text-green-600">Sign Up</button>
                             </Link>
                         </>
                     )}

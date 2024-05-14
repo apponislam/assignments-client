@@ -57,7 +57,7 @@ const Assignment = ({ assignment, assignment1, setAssignment1, setAssignment2 })
     };
 
     return (
-        <div className="rounded-xl border shadow-lg relative">
+        <div className="rounded-xl border border-green-600 shadow-lg relative">
             <img className="h-64 object-cover rounded-xl w-full" src={image} alt="" />
             <p className="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-3xl font-bold">{deficulty}</p>
             <div className="p-4">
@@ -68,14 +68,14 @@ const Assignment = ({ assignment, assignment1, setAssignment1, setAssignment2 })
                 <div>
                     <div className="grid grid-cols-2 gap-4 mb-4">
                         <Link to={`/update/${_id}`}>
-                            <button className="btn w-full">Update</button>
+                            <button className="btn w-full bg-transparent border-green-600 text-green-600 hover:bg-green-600 hover:text-white">Update</button>
                         </Link>
-                        <button className="btn" onClick={() => deleteAssignment(_id)}>
+                        <button className="btn bg-green-600 border-green-600 hover:border-green-600 text-white hover:bg-transparent hover:text-green-600" onClick={() => deleteAssignment(_id)}>
                             Delete
                         </button>
                     </div>
                     <Link to={`/info/${_id}`}>
-                        <button className="btn w-full">View</button>
+                        <button className="btn w-full bg-transparent border-green-600 text-green-600 hover:bg-green-600 hover:text-white">View</button>
                     </Link>
                 </div>
             </div>

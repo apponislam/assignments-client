@@ -38,7 +38,7 @@ const PendingAssignment = () => {
                                     <td>{pendingAssignment.status ? "Completed" : "Pending"}</td>
                                     <td className="text-right">
                                         <Link to={`/Check/${pendingAssignment._id}`}>
-                                            <button className="btn">Give Mark</button>
+                                            <button className="btn bg-transparent border-green-600 text-green-600 hover:bg-green-600 hover:text-white">Give Mark</button>
                                         </Link>
                                     </td>
                                 </tr>

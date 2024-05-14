@@ -65,21 +65,21 @@ const GiveMark = () => {
                             Note by user: <span className="font-bold">{note}</span>
                         </p>
 
-                        <div className="flex flex-col w-full border shadow-lg rounded-2xl">
-                            <div className="p-5 border-b">
+                        <div className="flex flex-col w-full border border-green-600 shadow-lg rounded-2xl">
+                            <div className="p-5 border-b border-green-600">
                                 <h1 className="text-center font-semibold text-2xl md:text-3xl">Submit your assignment</h1>
                             </div>
                             <div className="p-4">
                                 <form onSubmit={markSubmitBtn}>
                                     <div className="gap-4 grid grid-cols-1">
                                         <div>
-                                            <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none" type="number" placeholder="Give mark..." name="newMark" required />
+                                            <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none border-green-600" type="number" placeholder="Give mark..." name="newMark" required />
                                         </div>
                                         <div>
-                                            <textarea className="w-full bg-transparent border-b p-3 focus-visible:outline-none h-32" type="text" placeholder="Feedback..." name="feedback" required />
+                                            <textarea className="w-full bg-transparent border-b p-3 focus-visible:outline-none h-32 border-green-600" type="text" placeholder="Feedback..." name="feedback" required />
                                         </div>
                                     </div>
-                                    <input className="btn w-full mt-4" type="submit" value="Submit" />
+                                    <input className="btn w-full mt-4 bg-transparent border-green-600 text-green-600 hover:bg-green-600 hover:text-white" type="submit" value="Submit" />
                                 </form>
                             </div>
                         </div>

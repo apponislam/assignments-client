@@ -41,21 +41,21 @@ const SubmitAssignment = () => {
         <div className="container mx-auto">
             <div className="md:my-20 my-10">
                 <div className="flex justify-center items-center">
-                    <div className="flex flex-col w-full md:w-3/4 lg:w-1/2 2xl:w-2/4 border shadow-lg rounded-2xl mx-3 md:mx-0">
-                        <div className="p-5 border-b">
+                    <div className="flex flex-col w-full md:w-3/4 lg:w-1/2 2xl:w-2/4 border border-green-600 shadow-lg rounded-2xl mx-3 md:mx-0">
+                        <div className="p-5 border-b border-green-600">
                             <h1 className="text-center font-semibold text-2xl md:text-3xl">Submit your assignment</h1>
                         </div>
                         <div className="p-4">
                             <form onSubmit={assignmentSubmitBtn}>
                                 <div className="gap-4 grid grid-cols-1">
                                     <div>
-                                        <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none" type="text" placeholder="PDF Link..." name="document" required />
+                                        <input className="w-full bg-transparent border-b p-3 focus-visible:outline-none border-green-600" type="text" placeholder="PDF Link..." name="document" required />
                                     </div>
                                     <div>
-                                        <textarea className="w-full bg-transparent border-b p-3 focus-visible:outline-none h-32" type="text" placeholder="Quick Note..." name="note" required />
+                                        <textarea className="w-full bg-transparent border-b p-3 focus-visible:outline-none h-32 border-green-600" type="text" placeholder="Quick Note..." name="note" required />
                                     </div>
                                 </div>
-                                <input className="btn w-full mt-4" type="submit" value="Submit" />
+                                <input className="btn w-full mt-4 bg-transparent border-green-600 text-green-600 hover:bg-green-600 hover:text-white" type="submit" value="Submit" />
                             </form>
                         </div>
                     </div>
