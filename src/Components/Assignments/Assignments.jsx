@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Assignment from "./Assignment";
 import { useEffect, useState } from "react";
 
@@ -37,6 +38,9 @@ const Assignments = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>All Assignments || Appon Assignment Library</title>
+            </Helmet>
             <div className="my-20">
                 <h1 className="text-2xl md:text-4xl text-center my-12 uppercase font-extrabold">All Assignments</h1>
 

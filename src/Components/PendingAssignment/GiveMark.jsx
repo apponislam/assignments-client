@@ -1,9 +1,10 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const GiveMark = () => {
     const markAssignment = useLoaderData();
-    const { _id, note, document, marks } = markAssignment;
+    const { _id, note, document, marks, title } = markAssignment;
     console.log(markAssignment);
     const navigate = useNavigate();
 
@@ -55,6 +56,9 @@ const GiveMark = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>Cheaking {title} || Appon Assignment Library</title>
+            </Helmet>
             <div className="my-10 md:my-20 mx-3 md:mx-0">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

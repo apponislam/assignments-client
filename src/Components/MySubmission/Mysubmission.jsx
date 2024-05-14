@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../Provider/Provider";
 import useAxios from "./useAxios";
+import { Helmet } from "react-helmet-async";
 
 const Mysubmission = () => {
     const { user } = useContext(Context);
@@ -19,6 +20,9 @@ const Mysubmission = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title> {user?.displayName} - Your Submission || Appon Assignment Library</title>
+            </Helmet>
             <div className="my-10 md:my-20">
                 <h1 className="text-2xl md:text-4xl text-center my-12 uppercase font-extrabold">My Submission</h1>
 

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Details = () => {
@@ -9,6 +10,9 @@ const Details = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>{title} || Appon Assignment Library</title>
+            </Helmet>
             <div className="my-10 md:my-20 flex items-center justify-center">
                 <div className="border w-full md:w-2/3 border-blue-600 rounded-2xl p-4 md:p-5 mx-3 md:mx-0">
                     <div className="relative">

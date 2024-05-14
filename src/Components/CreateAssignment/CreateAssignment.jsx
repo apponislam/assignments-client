@@ -5,6 +5,7 @@ import { Context } from "../Provider/Provider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const CreateAssignment = () => {
     const { user } = useContext(Context);
@@ -41,6 +42,9 @@ const CreateAssignment = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>Crate Your Assignment || Appon Assignment Library</title>
+            </Helmet>
             <div className="flex items-center justify-center min-h-screen">
                 <div className="flex flex-col w-full md:w-3/4 lg:w-1/2 2xl:w-2/4 border border-green-600 shadow-lg rounded-2xl mx-3 md:mx-0">
                     <div className="p-5 border-b border-green-600">

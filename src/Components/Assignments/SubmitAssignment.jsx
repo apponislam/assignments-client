@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { Context } from "../Provider/Provider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const SubmitAssignment = () => {
     const { user } = useContext(Context);
@@ -39,6 +40,11 @@ const SubmitAssignment = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>
+                    {title} - {examineeName} || Appon Assignment Library
+                </title>
+            </Helmet>
             <div className="md:my-20 my-10">
                 <div className="flex justify-center items-center">
                     <div className="flex flex-col w-full md:w-3/4 lg:w-1/2 2xl:w-2/4 border border-green-600 shadow-lg rounded-2xl mx-3 md:mx-0">

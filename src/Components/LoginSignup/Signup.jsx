@@ -5,6 +5,7 @@ import { Context } from "../Provider/Provider";
 import { signOut, updateProfile } from "firebase/auth";
 import auth from "../../Firebase/Firebase.config";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Signup = () => {
     const [viewpass, setViewpass] = useState(false);
@@ -75,6 +76,9 @@ const Signup = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>Registration || Appon Assignment Library</title>
+            </Helmet>
             <div className="flex items-center justify-center min-h-screen">
                 <div className="flex flex-col w-full md:w-3/4 lg:w-1/2 2xl:w-2/4 border border-green-600 shadow-lg rounded-2xl mx-3 md:mx-0">
                     <div className="p-5 border-b border-green-600">

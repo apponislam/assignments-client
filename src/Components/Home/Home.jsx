@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Slider from "./Slider";
 import AssignmentCard2 from "./AssignmentCard2";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
     const assignments = useLoaderData();
@@ -8,6 +9,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Appon Assignment Library</title>
+            </Helmet>
             <Slider></Slider>
             <div className="container md:mx-auto">
                 <h1 className="text-2xl md:text-4xl text-center my-12 uppercase font-extrabold">Assignments</h1>
