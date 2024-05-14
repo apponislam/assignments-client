@@ -33,7 +33,7 @@ const GiveMark = () => {
         const status = true;
         const reviewed = { yougot, feedback, status };
         console.log(reviewed);
-        fetch(`http://localhost:5000/submitted/${_id}`, {
+        fetch(`https://assignment-server-wheat.vercel.app/submitted/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

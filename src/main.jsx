@@ -29,7 +29,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("http://localhost:5000/assignments"),
+                loader: () => fetch("https://assignment-server-wheat.vercel.app/assignments"),
             },
             {
                 path: "/login",
@@ -42,11 +42,11 @@ const router = createBrowserRouter([
             {
                 path: "/assignments",
                 element: <Assignments></Assignments>,
-                loader: () => fetch("http://localhost:5000/assignments"),
+                loader: () => fetch("https://assignment-server-wheat.vercel.app/assignments"),
             },
             {
                 path: "/info/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-server-wheat.vercel.app/assignments/${params.id}`),
                 element: (
                     <NotSigined>
                         <Details></Details>
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/Submit/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-server-wheat.vercel.app/assignments/${params.id}`),
                 element: (
                     <NotSigined>
                         <SubmitAssignment></SubmitAssignment>
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/Check/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/submitted/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-server-wheat.vercel.app/submitted/${params.id}`),
                 element: (
                     <NotSigined>
                         <GiveMark></GiveMark>
@@ -97,7 +97,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/update/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-server-wheat.vercel.app/assignments/${params.id}`),
                 element: (
                     <NotSigined>
                         <UpdateAssignment></UpdateAssignment>

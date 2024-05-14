@@ -25,7 +25,7 @@ const CreateAssignment = () => {
         const description = form.description.value;
         const assignment = { name, email, title, marks, image, description, startDate, deficulty };
         console.log(assignment);
-        axios.post("http://localhost:5000/assignments", assignment).then((data) => {
+        axios.post("https://assignment-server-wheat.vercel.app/assignments", assignment).then((data) => {
             console.log(data.data);
             if (data.data.insertedId) {
                 Swal.fire({

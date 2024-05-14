@@ -25,7 +25,7 @@ const SubmitAssignment = () => {
         const status = false;
         const feedback = "No Feedback";
         const submittedAssignment = { document, note, image, title, marks, deficulty, ownerName, ownerEmail, examineeName, examineeEmail, status, feedback };
-        axios.post("http://localhost:5000/submitted", submittedAssignment).then((data) => {
+        axios.post("https://assignment-server-wheat.vercel.app/submitted", submittedAssignment).then((data) => {
             console.log(data.data);
             if (data.data.insertedId) {
                 Swal.fire({

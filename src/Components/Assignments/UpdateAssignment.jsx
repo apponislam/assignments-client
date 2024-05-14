@@ -26,7 +26,7 @@ const UpdateAssignment = () => {
         const newDate = startDates;
         const newDificult = deficultyLevel;
         const assignment = { newTitle, newMark, newImage, newDescription, newDate, newDificult };
-        fetch(`http://localhost:5000/assignments/${_id}`, {
+        fetch(`https://assignment-server-wheat.vercel.app/assignments/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

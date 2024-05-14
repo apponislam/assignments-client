@@ -28,7 +28,7 @@ const Login = () => {
                 // <Navigate to="/"></Navigate>;
 
                 const user = { email };
-                axios.post("http://localhost:5000/jwt", user, { withCredentials: true }).then((res) => {
+                axios.post("https://assignment-server-wheat.vercel.app/jwt", user, { withCredentials: true }).then((res) => {
                     console.log(res.data);
                 });
 
@@ -56,7 +56,7 @@ const Login = () => {
 
                 const email = result.user.email;
                 const user = { email };
-                axios.post("http://localhost:5000/jwt", user, { withCredentials: true }).then((res) => {
+                axios.post("https://assignment-server-wheat.vercel.app/jwt", user, { withCredentials: true }).then((res) => {
                     console.log(res.data);
                 });
 
@@ -85,7 +85,7 @@ const Login = () => {
 
                 const email = result.user.email;
                 const user = { email };
-                axios.post("http://localhost:5000/jwt", user, { withCredentials: true }).then((res) => {
+                axios.post("https://assignment-server-wheat.vercel.app/jwt", user, { withCredentials: true }).then((res) => {
                     console.log(res.data);
                 });
 

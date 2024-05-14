@@ -4,7 +4,7 @@ import { Context } from "../Provider/Provider";
 import { useNavigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://assignment-server-wheat.vercel.app",
     withCredentials: true,
 });
 

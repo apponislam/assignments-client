@@ -10,7 +10,7 @@ const Mysubmission = () => {
     const [myAssignments, setMyAssignments] = useState([]);
 
     useEffect(() => {
-        // fetch(`http://localhost:5000/submitted?email=${userEmail}`, { credentials: "include" })
+        // fetch(`https://assignment-server-wheat.vercel.app/submitted?email=${userEmail}`, { credentials: "include" })
         //     .then((res) => res.json())
         //     .then((data) => setMyAssignments(data));
 

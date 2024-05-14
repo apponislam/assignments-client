@@ -32,7 +32,7 @@ const Assignment = ({ assignment, assignment1, setAssignment1, setAssignment2 })
                         text: "Your file has been deleted.",
                         icon: "success",
                     });
-                    fetch(`http://localhost:5000/assignments/${id}`, {
+                    fetch(`https://assignment-server-wheat.vercel.app/assignments/${id}`, {
                         method: "DELETE",
                     })
                         .then((res) => res.json())

@@ -5,7 +5,7 @@ const PendingAssignment = () => {
     const [pendingAssignments, setPendingAssignments] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/submitted/status/false")
+        fetch("https://assignment-server-wheat.vercel.app/submitted/status/false")
             .then((res) => res.json())
             .then((data) => setPendingAssignments(data));
     }, []);

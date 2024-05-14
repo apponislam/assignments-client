@@ -6,7 +6,7 @@ const Assignments = () => {
     const [assignment2, setAssignment2] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/assignments")
+        fetch("https://assignment-server-wheat.vercel.app/assignments")
             .then((response) => response.json())
             .then((json) => {
                 setAssignment1(json);
