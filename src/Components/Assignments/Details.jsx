@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Details = () => {
     const assignment = useLoaderData();
-    console.log(assignment);
+    // console.log(assignment);
     const { _id, image, title, marks, deficulty, name, startDate, description } = assignment;
 
     const maindate = startDate.slice(0, 10);

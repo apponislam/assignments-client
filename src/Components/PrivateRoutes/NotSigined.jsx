@@ -7,7 +7,7 @@ import { useContext } from "react";
 const NotSigined = ({ children }) => {
     const { user, loading } = useContext(Context);
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
 
     if (loading) {
         return (

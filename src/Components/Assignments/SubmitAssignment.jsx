@@ -12,7 +12,7 @@ const SubmitAssignment = () => {
     console.log(examineeName, examineeEmail);
 
     const assignment = useLoaderData();
-    console.log(assignment);
+    // console.log(assignment);
     const { image, title, marks, deficulty, name, email } = assignment;
     const navigate = useNavigate();
 

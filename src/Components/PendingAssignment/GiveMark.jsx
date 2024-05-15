@@ -22,7 +22,7 @@ const GiveMark = () => {
         e.preventDefault();
         const form = e.target;
         const yougot = form.newMark.value;
-        console.log(parseInt(yougot), parseInt(marks));
+        // console.log(parseInt(yougot), parseInt(marks));
         if (parseInt(yougot) > parseInt(marks)) {
             Swal.fire({
                 icon: "error",
@@ -34,7 +34,7 @@ const GiveMark = () => {
         const feedback = form.feedback.value;
         const status = true;
         const reviewed = { yougot, feedback, status };
-        console.log(reviewed);
+        // console.log(reviewed);
         fetch(`https://assignment-server-wheat.vercel.app/submitted/${_id}`, {
             method: "PUT",
             headers: {

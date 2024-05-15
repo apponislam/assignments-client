@@ -37,7 +37,7 @@ const useAxios = () => {
                 }
             }
         );
-    }, [logOut, navigate]);
+    }, [logOut, navigate, setLoading]);
 
     return axiosSecure;
 };

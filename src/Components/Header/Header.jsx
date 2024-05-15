@@ -75,7 +75,7 @@ const Header = () => {
     const logOutButton = () => {
         logOut()
             .then(() => {
-                console.log("Successfully logged out");
+                // console.log("Successfully logged out");
                 axios
                     .post("https://assignment-server-wheat.vercel.app/logout", { withCredentials: true })
                     .then((response) => {

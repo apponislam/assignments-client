@@ -18,7 +18,7 @@ const Signup = () => {
         const image = e.target.image.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, image, email, password);
+        // console.log(name, image, email, password);
 
         if (password.length < 6) {
             Swal.fire({
@@ -45,7 +45,7 @@ const Signup = () => {
                     photoURL: image,
                 })
                     .then(() => {
-                        console.log("profile updated successfully");
+                        // console.log("profile updated successfully");
                         Swal.fire({
                             icon: "success",
                             title: "Registered Successfully",

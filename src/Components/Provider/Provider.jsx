@@ -39,7 +39,7 @@ const Provider = ({ children }) => {
     // Ovserver On State Change
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (mainUser) => {
-            console.log(mainUser);
+            // console.log(mainUser);
             setUser(mainUser);
             setLoading(false);
         });
