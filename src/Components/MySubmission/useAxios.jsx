@@ -9,7 +9,7 @@ const axiosSecure = axios.create({
 });
 
 const useAxios = () => {
-    const { logOut } = useContext(Context);
+    const { logOut, setLoading } = useContext(Context);
 
     const navigate = useNavigate();
 
@@ -28,6 +28,7 @@ const useAxios = () => {
                     logOut()
                         .then(() => {
                             console.log("Successfully logged out");
+                            setLoading(false);
                         })
                         .catch((error) => {
                             console.log(error);

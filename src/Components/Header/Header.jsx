@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Context } from "../Provider/Provider";
 import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
+import axios from "axios";
 
 const Header = () => {
     const { user, loading, logOut } = useContext(Context);
@@ -75,6 +76,16 @@ const Header = () => {
         logOut()
             .then(() => {
                 console.log("Successfully logged out");
+                axios
+                    .post("https://assignment-server-wheat.vercel.app/logout", { withCredentials: true })
+                    .then((response) => {
+                        if (response.data.success) {
+                            console.log("Cookie Removed");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error logging out:", error);
+                    });
             })
             .catch((error) => {
                 console.log(error);

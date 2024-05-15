@@ -22,7 +22,8 @@ const GiveMark = () => {
         e.preventDefault();
         const form = e.target;
         const yougot = form.newMark.value;
-        if (yougot > marks) {
+        console.log(parseInt(yougot), parseInt(marks));
+        if (parseInt(yougot) > parseInt(marks)) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
